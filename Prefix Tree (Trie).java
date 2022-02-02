@@ -34,9 +34,7 @@ class Trie {
         TrieNode curr = root;
         for(int i = 0; i < word.length(); i++){
             char c = word.charAt(i);
-            if(curr.children[c - 'a'] == null){
-                curr.children[c - 'a'] = new TrieNode();
-            }
+            if(curr.children[c - 'a'] == null) return false;
             curr = curr.children[c - 'a'];
         }
         return curr.isEnd;
@@ -46,9 +44,7 @@ class Trie {
         TrieNode curr = root;
         for(int i = 0; i < prefix.length(); i++){
             char c = prefix.charAt(i);
-            if(curr.children[c - 'a'] == null){
-                curr.children[c - 'a'] = new TrieNode();
-            }
+            if(curr.children[c - 'a'] == null) return false;
             curr = curr.children[c - 'a'];
         }
         return true;
